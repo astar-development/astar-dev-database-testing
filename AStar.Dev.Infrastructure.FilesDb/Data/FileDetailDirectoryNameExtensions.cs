@@ -1,6 +1,5 @@
 ﻿using AStar.Dev.Infrastructure.FilesDb.Models;
 using AStar.Dev.Utilities;
-using Microsoft.EntityFrameworkCore;
 
 namespace AStar.Dev.Infrastructure.FilesDb.Data;
 
@@ -18,6 +17,6 @@ public static class FileDetailDirectoryNameExtensions
     /// <returns></returns>
     public static IQueryable<FileDetail> WhereDirectoryNameMatches(this IQueryable<FileDetail> filesContext, string directoryName, bool includeSubDirectories) =>
         includeSubDirectories
-            ? filesContext.Where(file => EF.Functions.Like(file.DirectoryName.Value, $"{directoryName.RemoveTrailing(@"\")}%"))
+            ? filesContext.Where(file => file.DirectoryName.Value.StartsWith(directoryName.RemoveTrailing(@"\")))
             : filesContext.Where(file => file.DirectoryName.Value == directoryName.RemoveTrailing(@"\"));
 }
