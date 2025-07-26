@@ -24,6 +24,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{EB916946-4AEB-4F7A-B6AF-E270D6574EC0}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{1B8EF033-F575-495D-BC9C-D0539E66EC28}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\main_astar-dev.yml = .github\workflows\main_astar-dev.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,5 +78,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F8498D7-2757-4147-B9D5-02595469FE7A}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EB916946-4AEB-4F7A-B6AF-E270D6574EC0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1B8EF033-F575-495D-BC9C-D0539E66EC28} = {EB916946-4AEB-4F7A-B6AF-E270D6574EC0}
 	EndGlobalSection
 EndGlobal
