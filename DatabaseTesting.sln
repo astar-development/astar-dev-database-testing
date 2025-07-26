@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Technical.Debt.Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Utilities", "support\AStar.Dev.Utilities\AStar.Dev.Utilities.csproj", "{28720605-9CA9-4A33-BB00-655F4B76CA19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Infrastructure.FilesDb.Tests.Integration", "test\AStar.Dev.Infrastructure.FilesDb.Tests.Unit\AStar.Dev.Infrastructure.FilesDb.Tests.Integration.csproj", "{2860766A-6251-4874-9535-199ED5E29AA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Infrastructure.FilesDb.Tests.Integration", "test\AStar.Dev.Infrastructure.FilesDb.Tests.Integration\AStar.Dev.Infrastructure.FilesDb.Tests.Integration.csproj", "{2860766A-6251-4874-9535-199ED5E29AA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbContextHelpers", "support\DbContextHelpers\DbContextHelpers.csproj", "{FE38F9CD-8573-44D1-A03F-73D318B6E86D}"
 EndProject
@@ -35,6 +35,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Infrastructure", "src\AStar.Dev.Infrastructure\AStar.Dev.Infrastructure.csproj", "{C00B2A62-E46E-4F6E-BC8A-39088261A17E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Infrastructure.FilesDb", "src\AStar.Dev.Infrastructure.FilesDb\AStar.Dev.Infrastructure.FilesDb.csproj", "{626B3E85-6C5D-4D8B-96BB-BF2D375326CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Infrastructure.Tests.Unit", "test\AStar.Dev.Infrastructure.Tests.Unit\AStar.Dev.Infrastructure.Tests.Unit.csproj", "{1EC059E7-7C8D-4492-8C07-30BD79AEE465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AStar.Dev.Infrastructure.FilesDb.Tests.Unit", "test\AStar.Dev.Infrastructure.FilesDb.Tests.Unit\AStar.Dev.Infrastructure.FilesDb.Tests.Unit.csproj", "{019990B2-EFCD-4FB1-9FD1-CD98CCBFF670}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +70,14 @@ Global
 		{626B3E85-6C5D-4D8B-96BB-BF2D375326CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626B3E85-6C5D-4D8B-96BB-BF2D375326CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626B3E85-6C5D-4D8B-96BB-BF2D375326CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EC059E7-7C8D-4492-8C07-30BD79AEE465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EC059E7-7C8D-4492-8C07-30BD79AEE465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EC059E7-7C8D-4492-8C07-30BD79AEE465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EC059E7-7C8D-4492-8C07-30BD79AEE465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{019990B2-EFCD-4FB1-9FD1-CD98CCBFF670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{019990B2-EFCD-4FB1-9FD1-CD98CCBFF670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{019990B2-EFCD-4FB1-9FD1-CD98CCBFF670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{019990B2-EFCD-4FB1-9FD1-CD98CCBFF670}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +94,7 @@ Global
 		{FE38F9CD-8573-44D1-A03F-73D318B6E86D} = {F06BC983-3361-41B2-B64F-7A77A2E32782}
 		{C00B2A62-E46E-4F6E-BC8A-39088261A17E} = {D61F13DC-3A32-42BE-8687-F795D7332A51}
 		{626B3E85-6C5D-4D8B-96BB-BF2D375326CA} = {D61F13DC-3A32-42BE-8687-F795D7332A51}
+		{1EC059E7-7C8D-4492-8C07-30BD79AEE465} = {D96E7D57-B3CF-4792-8532-59F03453A8B6}
+		{019990B2-EFCD-4FB1-9FD1-CD98CCBFF670} = {D96E7D57-B3CF-4792-8532-59F03453A8B6}
 	EndGlobalSection
 EndGlobal

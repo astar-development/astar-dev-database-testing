@@ -117,54 +117,6 @@
             <param name="modelBuilder">
             </param>
         </member>
-        <member name="T:AStar.Dev.Infrastructure.FilesDb.EnumerableExtensions">
-            <summary>
-            </summary>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.EnumerableExtensions.FilterImagesIfApplicable(System.Collections.Generic.IEnumerable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.String,System.Threading.CancellationToken)">
-            <summary>
-            </summary>
-            <param name="files">
-            </param>
-            <param name="searchType">
-            </param>
-            <param name="cancellationToken">
-            </param>
-            <returns>
-            </returns>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.EnumerableExtensions.OrderFiles(System.Collections.Generic.IEnumerable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},AStar.Dev.Infrastructure.FilesDb.Models.SortOrder)">
-            <summary>
-            </summary>
-            <param name="files">
-            </param>
-            <param name="sortOrder">
-            </param>
-            <returns>
-            </returns>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.EnumerableExtensions.GetDuplicatesCount(System.Collections.Generic.IEnumerable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.Threading.CancellationToken)">
-            <summary>
-                Gets the count of duplicates, grouped by Size, Height and Width.
-            </summary>
-            <param name="files">
-                The files to return grouped together.
-            </param>
-            <param name="cancellationToken">
-            </param>
-            <returns>
-            </returns>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.EnumerableExtensions.GetDuplicates(System.Collections.Generic.IEnumerable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail})">
-            <summary>
-                Gets the count of duplicates, grouped by Size, Height and Width.
-            </summary>
-            <param name="files">
-                The files to return grouped together.
-            </param>
-            <returns>
-            </returns>
-        </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.RecreateAgain">
             <inheritdoc />
         </member>

@@ -1,0 +1,13 @@
+{
+  "id": 0,
+  "text": "",
+  "fileClassifications": [
+    {
+      "id": 1,
+      "name": "",
+      "fileDetails": [],
+      "celebrity": false,
+      "fileNameParts": []
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+﻿{
+  "value": "Clearly, this is not a valid connection string"
+}
