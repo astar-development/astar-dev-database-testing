@@ -12,33 +12,6 @@
             <summary>
             </summary>
         </member>
-        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.Common.ComplexPropertyBuilderConfiguration">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.Common.ComplexPropertyBuilderConfiguration.Configure``1(Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder{``0},AStar.Dev.Infrastructure.FilesDb.Data.Common.IComplexPropertyConfiguration{``0})">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-            <param name="propertyBuilder"></param>
-            <param name="configuration"></param>
-            <returns></returns>
-        </member>
-        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.Common.IComplexPropertyConfiguration`1">
-            <summary>
-            
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.Common.IComplexPropertyConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder{`0})">
-            <summary>
-            
-            </summary>
-            <param name="builder"></param>
-            <returns></returns>
-        </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.Configurations.EventConfiguration">
             <summary>
             </summary>

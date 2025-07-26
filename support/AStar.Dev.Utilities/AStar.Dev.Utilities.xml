@@ -67,12 +67,10 @@
         </member>
         <member name="T:AStar.Dev.Utilities.LinqExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="M:AStar.Dev.Utilities.LinqExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
             <summary>
-
             </summary>
             <param name="enumerable"></param>
             <param name="action"></param>
