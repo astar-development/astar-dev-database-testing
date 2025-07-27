@@ -7,11 +7,9 @@ namespace AStar.Dev.Infrastructure.FilesDb.Data.Configurations;
 
 internal sealed class EventTypeConfiguration : IComplexPropertyConfiguration<EventType>
 {
-    public ComplexPropertyBuilder<EventType> Configure(ComplexPropertyBuilder<EventType> builder)
+    public void Configure(ComplexPropertyBuilder<EventType> builder)
     {
         builder.Property(eventType => eventType.Value).HasColumnName("EventType").IsRequired();
         builder.Property(eventType => eventType.Name).HasColumnName("EventName").IsRequired();
-
-        return builder;
     }
 }

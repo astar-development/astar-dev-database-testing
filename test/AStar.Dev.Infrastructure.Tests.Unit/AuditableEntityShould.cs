@@ -12,7 +12,7 @@ public class AuditableEntityShould
            .ToJson()
            .ShouldMatchApproved();
 
-    private class MockAuditableEntity : AuditableEntity
+    private sealed class MockAuditableEntity : AuditableEntity
     {
     }
 }
