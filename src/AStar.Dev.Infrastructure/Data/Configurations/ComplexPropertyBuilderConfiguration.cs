@@ -1,23 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Data.Common;
+namespace AStar.Dev.Infrastructure.Data.Configurations;
 
 /// <summary>
-/// 
 /// </summary>
-internal static class ComplexPropertyBuilderConfiguration
+public static class ComplexPropertyBuilderConfiguration
 {
     /// <summary>
-    /// 
     /// </summary>
-    /// <typeparam name="TEntity"></typeparam>
     /// <param name="propertyBuilder"></param>
     /// <param name="configuration"></param>
+    /// <typeparam name="TEntity"></typeparam>
     /// <returns></returns>
     public static ComplexPropertyBuilder<TEntity> Configure<TEntity>(this ComplexPropertyBuilder<TEntity> propertyBuilder, IComplexPropertyConfiguration<TEntity> configuration)
-        where TEntity : class
     {
         configuration.Configure(propertyBuilder);
+
         return propertyBuilder;
     }
 }

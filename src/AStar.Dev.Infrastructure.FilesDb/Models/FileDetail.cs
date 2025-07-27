@@ -55,7 +55,7 @@ public sealed class FileDetail : AuditableEntity
     /// <summary>
     ///     Gets the full name of the file with the path combined
     /// </summary>
-    public string FullNameWithPath => Path.Combine(DirectoryName.Value, FileName.Value);
+    public string FullNameWithPath => Path.Combine(DirectoryName.Value, FileName.Value ?? "");
 
     /// <summary>
     ///     Gets or sets the file size. I know, shocking...

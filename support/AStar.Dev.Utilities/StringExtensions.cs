@@ -88,7 +88,7 @@ public static class StringExtensions
     /// <param name="truncateLength">The maximum length the string should be truncated to if required</param>
     /// <returns>The specified string or the truncated version</returns>
     public static string TruncateIfRequired(this string value, int truncateLength) =>
-        value.Length > truncateLength ? value[..350] : value;
+        value.Length > truncateLength ? value[..truncateLength] : value;
 
     /// <summary>
     ///     The RemoveTrailing method will, as the name suggests, remove the specified character from the end if it exists

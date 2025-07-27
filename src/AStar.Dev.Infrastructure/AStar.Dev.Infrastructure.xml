@@ -4,18 +4,6 @@
         <name>AStar.Dev.Infrastructure</name>
     </assembly>
     <members>
-        <member name="T:AStar.Dev.Infrastructure.ComplexPropertyBuilderConfiguration">
-            <summary>
-            </summary>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.ComplexPropertyBuilderConfiguration.Configure``1(Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder{``0},AStar.Dev.Infrastructure.IComplexPropertyConfiguration{``0})">
-            <summary>
-            </summary>
-            <param name="propertyBuilder"></param>
-            <param name="configuration"></param>
-            <typeparam name="TEntity"></typeparam>
-            <returns></returns>
-        </member>
         <member name="T:AStar.Dev.Infrastructure.Data.AStarDbContextOptions">
             <summary>
                 The <see href="AStarDbContextOptions"></see> class is used to aid configuring the <see href="DbContext"></see>
@@ -46,6 +34,29 @@
                 Gets or sets the date and time of the update. This is specified in UTC
             </summary>
         </member>
+        <member name="T:AStar.Dev.Infrastructure.Data.Configurations.ComplexPropertyBuilderConfiguration">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.Data.Configurations.ComplexPropertyBuilderConfiguration.Configure``1(Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder{``0},AStar.Dev.Infrastructure.Data.Configurations.IComplexPropertyConfiguration{``0})">
+            <summary>
+            </summary>
+            <param name="propertyBuilder"></param>
+            <param name="configuration"></param>
+            <typeparam name="TEntity"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.Data.Configurations.IComplexPropertyConfiguration`1">
+            <summary>
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.Data.Configurations.IComplexPropertyConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder{`0})">
+            <summary>
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
         <member name="T:AStar.Dev.Infrastructure.Data.ConnectionString">
             <summary>
                 The <see href="ConnectionString"></see> class for use when configuring the context
@@ -58,28 +69,29 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.Data.ConnectionString.op_Implicit(AStar.Dev.Infrastructure.Data.ConnectionString)~System.String">
             <summary>
-                The implicit convertor from <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString" /> to a simple <see cref="T:System.String" />
+                The implicit convertor from
+                <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString"/>
+                to a simple
+                <see cref="T:System.String"/>
             </summary>
-            <param name="connectionString">The instance of <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString" /> to convert.</param>
+            <param name="connectionString">The instance of
+                <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString"/>
+                to convert.
+            </param>
             <returns>The simple string representation</returns>
         </member>
         <member name="M:AStar.Dev.Infrastructure.Data.ConnectionString.op_Implicit(System.String)~AStar.Dev.Infrastructure.Data.ConnectionString">
             <summary>
-                The implicit convertor from a simple <see cref="T:System.String" /> to a <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString" />
+                The implicit convertor from a simple
+                <see cref="T:System.String"/>
+                to a
+                <see cref="T:AStar.Dev.Infrastructure.Data.ConnectionString"/>
             </summary>
-            <param name="connectionString">The instance of <see cref="T:System.String" /> to convert.</param>
+            <param name="connectionString">The instance of
+                <see cref="T:System.String"/>
+                to convert.
+            </param>
             <returns>The converted representation</returns>
-        </member>
-        <member name="T:AStar.Dev.Infrastructure.IComplexPropertyConfiguration`1">
-            <summary>
-            </summary>
-            <typeparam name="TEntity"></typeparam>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.IComplexPropertyConfiguration`1.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.ComplexPropertyBuilder{`0})">
-            <summary>
-            </summary>
-            <param name="builder"></param>
-            <returns></returns>
         </member>
     </members>
 </doc>

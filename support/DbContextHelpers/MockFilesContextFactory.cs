@@ -31,7 +31,7 @@ public static class MockFilesContextFactory
 
     public static void AddMockFiles(this FilesContext mockFilesContext)
     {
-        var combine     = Path.Combine(Directory.GetCurrentDirectory(), "../../../../DbContextHelpers/TestData/files.json");
+        var combine     = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../support/DbContextHelpers/TestData/files.json");
         var filesAsJson = File.ReadAllText(combine);
 
         var listFromJson = JsonSerializer.Deserialize<IEnumerable<FileDetail>>(filesAsJson, JsonSerializerOptions.Web)!;
