@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AStar.Dev.Infrastructure;
+namespace AStar.Dev.Infrastructure.Data.Configurations;
 
 /// <summary>
 /// </summary>

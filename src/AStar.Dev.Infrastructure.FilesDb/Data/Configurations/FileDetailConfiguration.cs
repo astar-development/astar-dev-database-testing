@@ -1,4 +1,5 @@
-﻿using AStar.Dev.Infrastructure.FilesDb.Models;
+﻿using AStar.Dev.Infrastructure.Data.Configurations;
+using AStar.Dev.Infrastructure.FilesDb.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
