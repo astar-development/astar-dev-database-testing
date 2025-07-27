@@ -31,9 +31,10 @@ public class FileDetailConfiguration : IEntityTypeConfiguration<FileDetail>
                .HasConversion(fileHandle => fileHandle.Value, fileHandle => new (fileHandle));
 
         builder.ComplexProperty(fileDetail => fileDetail.ImageDetail)
-            .Configure(new ImageDetailConfiguration());
+               .Configure(new ImageDetailConfiguration());
+
         builder.ComplexProperty(fileDetail => fileDetail.DirectoryName)
-            .Configure(new DirectoryNameConfiguration());
+               .Configure(new DirectoryNameConfiguration());
 
         builder.ComplexProperty(fileDetail => fileDetail.DeletionStatus)
                .Configure(new DeletionStatusConfiguration());

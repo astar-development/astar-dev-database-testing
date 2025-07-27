@@ -2,12 +2,12 @@
 
 public sealed class StringExtensionsShould
 {
-    private          const       string AnyJson       = "{\"AnyInt\":0,\"AnyString\":\"\"}";
-    private                const string NotNullString = "value does not matter";
+    private          const       string AnyJson          = "{\"AnyInt\":0,\"AnyString\":\"\"}";
+    private                const string NotNullString    = "value does not matter";
+    private  const               string WhitespaceString = " ";
 #pragma warning disable CA1805
     private readonly string? nullString       = null;
 #pragma warning restore CA1805
-    private  const string WhitespaceString = " ";
 
     [Fact]
     public void ContainTheIsNullMethodWhichReturnsTheResult() =>
