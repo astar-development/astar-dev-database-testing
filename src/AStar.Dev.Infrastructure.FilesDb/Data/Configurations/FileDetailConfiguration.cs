@@ -19,10 +19,7 @@ public class FileDetailConfiguration : IEntityTypeConfiguration<FileDetail>
         builder.Property(file => file.Id)
                .HasConversion(fileId => fileId.Value, fileId => new (fileId));
 
-        builder.Property(file => file.FileName)
-               .HasColumnType("nvarchar(256)")
-               .HasConversion(fileName => fileName.Value, fileName => new (fileName));
-
+        builder.Ignore(fileDetail => fileDetail.FileName);
         builder.Ignore(fileDetail => fileDetail.DirectoryName);
         builder.Ignore(fileDetail => fileDetail.FullNameWithPath);
 
@@ -36,12 +33,14 @@ public class FileDetailConfiguration : IEntityTypeConfiguration<FileDetail>
         builder.ComplexProperty(fileDetail => fileDetail.DirectoryName)
                .Configure(new DirectoryNameConfiguration());
 
+        builder.ComplexProperty(fileDetail => fileDetail.FileName)
+               .Configure(new FileNameConfiguration());
+
         builder.ComplexProperty(fileDetail => fileDetail.DeletionStatus)
                .Configure(new DeletionStatusConfiguration());
 
         // Will want the handle to be unique, but not yet
         builder.HasIndex(fileDetail => fileDetail.FileHandle);
-        builder.HasIndex(fileDetail => fileDetail.FileName);
         builder.HasIndex(fileDetail => fileDetail.FileSize);
     }
 }

@@ -9,12 +9,12 @@ public static class FileDetailDirectoryNameExtensions
 {
     /// <summary>
     /// </summary>
-    /// <param name="filesContext"></param>
+    /// <param name="files"></param>
     /// <param name="directoryName"></param>
     /// <param name="includeSubDirectories"></param>
     /// <returns></returns>
-    public static IQueryable<FileDetail> WhereDirectoryNameMatches(this IQueryable<FileDetail> filesContext, string directoryName, bool includeSubDirectories) =>
+    public static IQueryable<FileDetail> WhereDirectoryNameMatches(this IQueryable<FileDetail> files, string directoryName, bool includeSubDirectories) =>
         includeSubDirectories
-            ? filesContext.Where(file => file.DirectoryName.Value.StartsWith(directoryName.RemoveTrailing(@"\")))
-            : filesContext.Where(file => file.DirectoryName.Value == directoryName.RemoveTrailing(@"\"));
+            ? files.Where(file => file.DirectoryName.Value.Contains(directoryName.RemoveTrailing(@"\")))
+            : files.Where(file => file.DirectoryName.Value == directoryName.RemoveTrailing(@"\"));
 }

@@ -29,8 +29,15 @@ public class FileDetailShould
                                              Celebrity = true,
                                              Id        = 1,
                                              Name      = "Celebrity",
-                                             FileDetails   =
-                                                 new List<FileDetail> { new () { DirectoryName = new ("mock-directory-name2") , UpdatedOn = new (2025, 07, 28, 1, 2, 3, TimeSpan.Zero) } },
+                                             FileDetails   = new List<FileDetail>
+                                                             {
+                                                                 new ()
+                                                                 {
+                                                                     DirectoryName = new ("mock-directory-name2") ,
+                                                                     FileName      = new("mock-file-name"),
+                                                                     UpdatedOn     = new (2025, 07, 28, 1, 2, 3, TimeSpan.Zero)
+                                                                 }
+                                                             },
                                              FileNameParts = new List<FileNamePart> { new () { Text        = "mock-file-name-part" } }
                                          }
                                      },

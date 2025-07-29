@@ -10,12 +10,12 @@ public static class FileDetailLastViewedExtensions
     ///     A lot of variations of this method have been tried, but none of them worked as expected.
     ///     This one does not work as we're using SQLite for testing, and it does not support DateTimeOffset.
     /// </summary>
-    /// <param name="filesContext"></param>
+    /// <param name="files"></param>
     /// <param name="days"></param>
     /// <param name="time"></param>
     /// <returns></returns>
-    public static IQueryable<FileDetail> WhereLastViewedIsOlderThan(this IQueryable<FileDetail> filesContext, int days, TimeProvider time)
+    public static IQueryable<FileDetail> WhereLastViewedIsOlderThan(this IQueryable<FileDetail> files, int days, TimeProvider time)
         => days == 0
-               ? filesContext
-               : filesContext.Where(file => !file.FileLastViewed.HasValue || file.FileLastViewed.Value <= time.GetUtcNow().AddDays(-days));
+               ? files
+               : files.Where(file => !file.FileLastViewed.HasValue || file.FileLastViewed.Value <= time.GetUtcNow().AddDays(-days));
 }

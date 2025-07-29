@@ -45,12 +45,12 @@ public sealed class FileDetail : AuditableEntity
     /// <summary>
     ///     Gets or sets the file name. I know, shocking...
     /// </summary>
-    public FileName FileName { get; set; }
+    public required FileName FileName { get; set; }
 
     /// <summary>
     ///     Gets or sets the name of the directory containing the file detail. I know, shocking...
     /// </summary>
-    public DirectoryName DirectoryName { get; set; }
+    public required DirectoryName DirectoryName { get; set; }
 
     /// <summary>
     ///     Gets the full name of the file with the path combined

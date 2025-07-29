@@ -40,23 +40,25 @@
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.Configurations.FileNamePartConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{AStar.Dev.Infrastructure.FilesDb.Models.FileNamePart})">
             <inheritdoc/>
         </member>
-        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDirectoryNameExtensions">
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDeletionStatusExtensions">
             <summary>
 
             </summary>
         </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDirectoryNameExtensions">
+            <summary>
+            </summary>
+        </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDirectoryNameExtensions.WhereDirectoryNameMatches(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.String,System.Boolean)">
             <summary>
-
             </summary>
-            <param name="filesContext"></param>
+            <param name="files"></param>
             <param name="directoryName"></param>
             <param name="includeSubDirectories"></param>
             <returns></returns>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailLastViewedExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailLastViewedExtensions.WhereLastViewedIsOlderThan(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.Int32,System.TimeProvider)">
@@ -64,9 +66,36 @@
                 A lot of variations of this method have been tried, but none of them worked as expected.
                 This one does not work as we're using SQLite for testing, and it does not support DateTimeOffset.
             </summary>
-            <param name="filesContext"></param>
+            <param name="files"></param>
             <param name="days"></param>
             <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailOrderingExtensions">
+            <summary>
+
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailPagingExtensions">
+            <summary>
+
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailSearchTypeExtensions">
+            <summary>
+
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailTextContainsExtensions">
+            <summary>
+
+            </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailTextContainsExtensions.SelectFilesMatching(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.String)">
+            <summary>
+            </summary>
+            <param name="files"></param>
+            <param name="searchText"></param>
             <returns></returns>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext">
@@ -112,6 +141,12 @@
                 Gets or sets the Duplicate Details
             </summary>
         </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
                 The overridden OnModelCreating method
@@ -143,6 +178,42 @@
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.RecreateAgain2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc/>
         </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.UpdateFileNameConfiguration">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.UpdateFileNameConfiguration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.UpdateFileNameConfiguration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.UpdateFileNameConfiguration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexes">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.DeletionStatus">
             <summary>
                 Defines dates/times for soft and hard deletion
@@ -165,13 +236,11 @@
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.DirectoryName">
             <summary>
-
             </summary>
             <param name="Value"></param>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.DirectoryName.#ctor(System.String)">
             <summary>
-
             </summary>
             <param name="Value"></param>
         </member>
@@ -527,13 +596,11 @@
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.FileHandle">
             <summary>
-
             </summary>
             <param name="Value"></param>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileHandle.#ctor(System.String)">
             <summary>
-
             </summary>
             <param name="Value"></param>
         </member>
@@ -542,14 +609,12 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileHandle.Create(System.String)">
             <summary>
-
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileHandle.op_Implicit(AStar.Dev.Infrastructure.FilesDb.Models.FileHandle)~System.String">
             <summary>
-
             </summary>
             <param name="d"></param>
             <returns></returns>
@@ -571,13 +636,11 @@
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.FileName">
             <summary>
-
             </summary>
             <param name="Value"></param>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileName.#ctor(System.String)">
             <summary>
-
             </summary>
             <param name="Value"></param>
         </member>
@@ -586,7 +649,6 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileName.ToString">
             <summary>
-
             </summary>
             <returns></returns>
         </member>

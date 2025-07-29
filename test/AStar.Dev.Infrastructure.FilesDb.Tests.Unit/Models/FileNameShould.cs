@@ -8,7 +8,7 @@ public class FileNameShould
 {
     [Fact]
     public void ContainTheExpectedProperties()
-        => new FileName { Value = "mock-file-name" }
+        => new FileName ("mock-file-name")
            .ToJson()
            .ShouldMatchApproved();
 }
