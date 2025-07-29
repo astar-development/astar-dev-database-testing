@@ -14,12 +14,12 @@
             "height": null
           },
           "fileName": {
-            "value": null
+            "value": "mock-file-name"
           },
           "directoryName": {
             "value": "mock-directory-name2"
           },
-          "fullNameWithPath": "mock-directory-name2",
+          "fullNameWithPath": "mock-directory-name2/mock-file-name",
           "fileSize": 0,
           "isImage": false,
           "fileHandle": {

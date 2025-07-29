@@ -42,7 +42,6 @@
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDeletionStatusExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDirectoryNameExtensions">
@@ -73,22 +72,18 @@
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailOrderingExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailPagingExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailSearchTypeExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailTextContainsExtensions">
             <summary>
-
             </summary>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailTextContainsExtensions.SelectFilesMatching(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.String)">
@@ -143,7 +138,6 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FilesContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <summary>
-
             </summary>
             <param name="optionsBuilder"></param>
         </member>
@@ -200,18 +194,6 @@
             <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc/>
-        </member>
-        <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain">
-            <inheritdoc/>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc/>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexesAgain.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc/>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.DeletionStatus">
