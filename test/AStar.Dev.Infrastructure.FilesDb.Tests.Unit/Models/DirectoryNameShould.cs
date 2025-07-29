@@ -8,7 +8,7 @@ public class DirectoryNameShould
 {
     [Fact]
     public void ContainTheExpectedProperties()
-        => new DirectoryName { Value = "test" }
+        => new DirectoryName ( "test")
            .ToJson()
            .ShouldMatchApproved();
 }

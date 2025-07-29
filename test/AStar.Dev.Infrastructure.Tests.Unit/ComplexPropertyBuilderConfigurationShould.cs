@@ -6,6 +6,21 @@ namespace AStar.Dev.Infrastructure.Tests.Unit;
 
 public class ComplexPropertyBuilderConfigurationShould
 {
+    [Fact]
+    public void Configure_ShouldInvokeConfigurationAndReturnSameBuilder()
+    {
+        var modelBuilder   = new ModelBuilder();
+        var entityBuilder  = modelBuilder.Entity<DummyEntity>();
+        var complexBuilder = entityBuilder.ComplexProperty(e => e.Address);
+
+        var config = new TestConfiguration();
+
+        var result = complexBuilder.Configure(config);
+
+        Assert.True(config.WasCalled);
+        Assert.Same(complexBuilder, result);
+    }
+
     private sealed class DummyEntity
     {
         public Address Address { get; set; } = new();
@@ -21,20 +36,5 @@ public class ComplexPropertyBuilderConfigurationShould
         public bool WasCalled { get; private set; }
 
         public void Configure(ComplexPropertyBuilder<Address> builder) => WasCalled = true;
-    }
-
-    [Fact]
-    public void Configure_ShouldInvokeConfigurationAndReturnSameBuilder()
-    {
-        var modelBuilder   = new ModelBuilder();
-        var entityBuilder  = modelBuilder.Entity<DummyEntity>();
-        var complexBuilder = entityBuilder.ComplexProperty(e => e.Address);
-
-        var config = new TestConfiguration();
-
-        var result = complexBuilder.Configure(config);
-
-        Assert.True(config.WasCalled);
-        Assert.Same(complexBuilder, result);
     }
 }

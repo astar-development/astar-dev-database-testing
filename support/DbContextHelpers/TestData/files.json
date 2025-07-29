@@ -9,12 +9,12 @@
       "height": 6601
     },
     "fileName": {
-      "value": "\\some\\file.txt"
+      "value": "file.txt"
     },
     "directoryName": {
-      "value": "\\some\\directory"
+      "value": "directory"
     },
-    "fullNameWithPath": "\\some\\file.txt",
+    "fullNameWithPath": "\\directory\\file.txt",
     "fileSize": 91801,
     "isImage": false,
     "fileHandle": {

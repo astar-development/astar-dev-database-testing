@@ -20,14 +20,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AStar.Dev.Functional.Extensions" Version="0.2.0" />
-        <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.15" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7" />
+        <PackageReference Include="AStar.Dev.Functional.Extensions" Version="0.2.0"/>
+        <PackageReference Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.15"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.7"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.7">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.7"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.7">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -35,14 +35,14 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="LICENSE" Pack="true" PackagePath="" />
-        <None Include="Readme.md" Pack="true" PackagePath="" />
+        <None Include="LICENSE" Pack="true" PackagePath=""/>
+        <None Include="Readme.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\support\AStar.Dev.Technical.Debt.Reporting\AStar.Dev.Technical.Debt.Reporting.csproj"/>
         <ProjectReference Include="..\..\support\AStar.Dev.Utilities\AStar.Dev.Utilities.csproj"/>
-        <ProjectReference Include="..\AStar.Dev.Infrastructure\AStar.Dev.Infrastructure.csproj" />
+        <ProjectReference Include="..\AStar.Dev.Infrastructure\AStar.Dev.Infrastructure.csproj"/>
     </ItemGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
