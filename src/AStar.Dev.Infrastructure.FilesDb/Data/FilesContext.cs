@@ -51,12 +51,6 @@ public class FilesContext : DbContext
     public DbSet<DuplicateDetail> DuplicateDetails { get; set; }
 
     /// <summary>
-    /// </summary>
-    /// <param name="optionsBuilder"></param>
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=localhost,33433;Database=filesDb;User Id=sa;Password=<SecurePasswordHere1!>;TrustServerCertificate=true;");
-
-    /// <summary>
     ///     The overridden OnModelCreating method
     /// </summary>
     /// <param name="modelBuilder">
