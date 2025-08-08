@@ -1,55 +1,57 @@
-using AStar.Dev.Infrastructure.FilesDb.Models;
-using AStar.Dev.Utilities;
+using System.IO.Abstractions;
+using JetBrains.Annotations;
+using NSubstitute;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
+namespace AStar.Dev.Infrastructure.FilesDb.Models;
 
-public class FileDetailShould
+[TestSubject(typeof(FileDetail))]
+public sealed class FileDetailShould
 {
     [Fact]
-    public void ContainTheExpectedProperties()
-        => new FileDetail
-           {
-               Id            = new (68),
-               DirectoryName = new ("mock-directory-name"),
-               FileName      = new ("mock-file-name"),
-               ImageDetail   = new (7, 8),
-               FileHandle    = new ("mock-file-handle"),
-               DeletionStatus =
-                   new()
-                   {
-                       HardDeletePending = new DateTimeOffset(2025, 07, 28, 1, 2, 3, TimeSpan.Zero),
-                       SoftDeletePending = new DateTimeOffset(2025, 07, 28, 2, 3, 4, TimeSpan.Zero),
-                       SoftDeleted       = new DateTimeOffset(2025, 07, 28, 3, 4, 5, TimeSpan.Zero)
-                   },
-               FileClassifications = new List<FileClassification>
-                                     {
-                                         new ()
-                                         {
-                                             Celebrity = true,
-                                             Id        = 1,
-                                             Name      = "Celebrity",
-                                             FileDetails   = new List<FileDetail>
-                                                             {
-                                                                 new ()
-                                                                 {
-                                                                     DirectoryName = new ("mock-directory-name2") ,
-                                                                     FileName      = new("mock-file-name"),
-                                                                     UpdatedOn     = new (2025, 07, 28, 1, 2, 3, TimeSpan.Zero)
-                                                                 }
-                                                             },
-                                             FileNameParts = new List<FileNamePart> { new () { Text        = "mock-file-name-part" } }
-                                         }
-                                     },
-               FileSize         = 1245,
-               IsImage          = true,
-               FileCreated      = new (2025, 07, 28, 5,  6,  7,  TimeSpan.Zero),
-               FileLastModified = new (2025, 07, 28, 10, 20, 30, TimeSpan.Zero),
-               FileLastViewed   = new DateTimeOffset(2025, 07, 28, 11, 22, 33, TimeSpan.Zero),
-               UpdatedBy        = "mock-user-name",
-               UpdatedOn        = new (2025, 07, 28, 8, 7, 9, TimeSpan.Zero),
-               MoveRequired     = true
-           }
-           .ToJson()
-           .ShouldMatchApproved();
+    public void ReturnTheExpectedToStringRepresentation()
+    {
+        var fileDetail = new FileDetail
+                         {
+                             Id               = new(1),
+                             DirectoryName    = new("MockDirectoryName"),
+                             FileCreated      = new (new (2025,               6, 28, 22, 15, 37, DateTimeKind.Utc)),
+                             FileLastModified = new (new (2025, 6, 28, 22, 15, 37, DateTimeKind.Utc)),
+                             DeletionStatus      =
+                                 new()
+                                 {
+                                     SoftDeleted       = new DateTimeOffset(new (2025, 6, 28, 22, 21, 37, DateTimeKind.Utc)),
+                                     SoftDeletePending = new DateTimeOffset(new (2025, 6, 28, 22, 22, 37, DateTimeKind.Utc)),
+                                     HardDeletePending = new DateTimeOffset(new (2025, 6, 28, 22, 23, 37, DateTimeKind.Utc))
+                                 },
+                             FileName            = new("MockFileName"),
+                             FileSize            = 1234,
+                             FileHandle          = new("MockFileHandle"),
+                             FileLastViewed      = new DateTimeOffset(new (2025, 6, 28, 22, 20, 37, DateTimeKind.Utc)),
+                             IsImage             = true,
+                             ImageDetail         = new(1234, 5678),
+                             UpdatedBy           = "Test User",
+                             UpdatedOn           = new (new (2025, 6, 28, 22, 30, 37, DateTimeKind.Utc)),
+                             FileClassifications = [new () { Id = 1, Name = "Test Classification", Celebrity = true }],
+                             MoveRequired        = true
+                         };
+
+        fileDetail.ToString().ShouldMatchApproved();
+    }
+
+    [Fact]
+    public void ReturnTheExpectedDataFromTheCopyConstructor()
+    {
+        var mockFileInfo      = Substitute.For<IFileInfo>();
+        mockFileInfo.Name.Returns("MockFileName");
+        mockFileInfo.DirectoryName.Returns("MockDirectoryName");
+        mockFileInfo.Length.Returns(1234);
+
+        var fileDetail = new FileDetail(mockFileInfo)
+                         {
+                             FileName = new("Mock File Name"), DirectoryName = new("Mock Directory Name"), UpdatedOn = new (new (2025, 6, 28, 22, 20, 37, DateTimeKind.Utc))
+                         };
+
+        fileDetail.ToString().ShouldMatchApproved();
+    }
 }

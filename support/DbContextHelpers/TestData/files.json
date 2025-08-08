@@ -884,7 +884,7 @@
     "moveRequired": false,
     "deletionStatus": {
       "softDeleted": null,
-      "softDeletePending": null,
+      "softDeletePending": "2025-07-14T09:21:52.4473812+00:00",
       "hardDeletePending": null
     },
     "updatedBy": "Jay Barden",
@@ -1116,7 +1116,7 @@
     "deletionStatus": {
       "softDeleted": null,
       "softDeletePending": null,
-      "hardDeletePending": null
+      "hardDeletePending": "2025-07-14T09:21:52.4473812+00:00"
     },
     "updatedBy": "Jay Barden",
     "updatedOn": "2025-07-21T09:21:52.447386+00:00"

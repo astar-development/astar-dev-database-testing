@@ -1,24 +1,29 @@
-﻿using AStar.Dev.Infrastructure.FilesDb.Models;
-using AStar.Dev.Utilities;
+﻿using AStar.Dev.Utilities;
+using JetBrains.Annotations;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
+namespace AStar.Dev.Infrastructure.FilesDb.Models;
 
+[TestSubject(typeof(FileHandle))]
 public class FileHandleShould
 {
     [Fact]
     public void ContainTheExpectedProperties()
-        => new FileHandle { Value = "mock-file-handle" }
+        => new FileHandle { Value = "some-handle" }
            .ToJson()
            .ShouldMatchApproved();
 
     [Fact]
-    public void DefineTheImplicitConversion()
+    public void ContainTheExpectedCreateMethod()
+        => FileHandle.Create("some-handle")
+                     .ToJson()
+                     .ShouldMatchApproved();
+
+    [Fact]
+    public void ContainTheExpectedImplicitConversionToString()
     {
-        var fileHandle = new FileHandle("mock-file-handle");
+        string sut = FileHandle.Create("some-handle");
 
-        string sut = fileHandle;
-
-        sut.ShouldBe("mock-file-handle");
+        sut.ShouldBe("some-handle");
     }
 }

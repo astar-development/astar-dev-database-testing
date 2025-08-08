@@ -3,7 +3,7 @@ using AStar.Dev.Infrastructure.FilesDb.Models;
 using DbContextHelpers.Fixtures;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Integration;
+namespace AStar.Dev.Infrastructure.FilesDb;
 
 public class FileDetailDirectoryNameExtensionsShould : IClassFixture<FilesContextFixture>
 {

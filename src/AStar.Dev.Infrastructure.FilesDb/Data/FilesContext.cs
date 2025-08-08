@@ -64,8 +64,8 @@ public class FilesContext : DbContext
         _ = modelBuilder
             .Entity<DuplicateDetail>(eb =>
                                      {
-                                         eb.HasNoKey();
-                                         eb.ToView("vw_DuplicateDetails");
+                                         _ = eb.HasNoKey();
+                                         _ = eb.ToView("vw_DuplicateDetails");
                                      });
     }
 }

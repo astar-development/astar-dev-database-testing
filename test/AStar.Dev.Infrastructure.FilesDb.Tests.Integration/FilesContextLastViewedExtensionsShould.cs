@@ -3,7 +3,7 @@ using DbContextHelpers.Fixtures;
 using Microsoft.Extensions.Time.Testing;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Integration;
+namespace AStar.Dev.Infrastructure.FilesDb;
 
 public class FilesContextLastViewedExtensionsShould : IClassFixture<FilesContextFixture>
 {

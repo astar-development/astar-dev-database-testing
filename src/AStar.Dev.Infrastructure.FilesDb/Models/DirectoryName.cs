@@ -1,9 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace AStar.Dev.Infrastructure.FilesDb.Models;
+﻿namespace AStar.Dev.Infrastructure.FilesDb.Models;
 
 /// <summary>
 /// </summary>
 /// <param name="Value"></param>
-[Index(nameof(Value))]
-public record DirectoryName(string Value);
+public readonly record struct DirectoryName(string Value);

@@ -2,7 +2,7 @@ using AStar.Dev.Infrastructure.FilesDb.Data;
 using DbContextHelpers.Fixtures;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Integration;
+namespace AStar.Dev.Infrastructure.FilesDb;
 
 /// <summary>
 /// </summary>

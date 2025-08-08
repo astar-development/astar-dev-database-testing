@@ -44,6 +44,14 @@
             <summary>
             </summary>
         </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDeletionStatusExtensions.IncludeDeletedOrDeletePending(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.Boolean)">
+            <summary>
+
+            </summary>
+            <param name="files"></param>
+            <param name="includeDeleted"></param>
+            <returns></returns>
+        </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDirectoryNameExtensions">
             <summary>
             </summary>
@@ -74,13 +82,38 @@
             <summary>
             </summary>
         </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailOrderingExtensions.OrderResultsBy(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},AStar.Dev.Infrastructure.FilesDb.Models.SortOrder)">
+            <summary>
+
+            </summary>
+            <param name="files"></param>
+            <param name="sortOrder"></param>
+            <returns></returns>
+        </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailPagingExtensions">
             <summary>
             </summary>
         </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailPagingExtensions.GetPage(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.Int32,System.Int32)">
+            <summary>
+
+            </summary>
+            <param name="files"></param>
+            <param name="pageNumber"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailSearchTypeExtensions">
             <summary>
             </summary>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailSearchTypeExtensions.OfSearchType(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},AStar.Dev.Infrastructure.FilesDb.Models.SearchType)">
+            <summary>
+
+            </summary>
+            <param name="files"></param>
+            <param name="searchType"></param>
+            <returns></returns>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailTextContainsExtensions">
             <summary>
@@ -189,6 +222,18 @@
             <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddFileDetailIndexes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Migrations.AddDuplicateImagesIndex">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddDuplicateImagesIndex.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddDuplicateImagesIndex.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Migrations.AddDuplicateImagesIndex.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc/>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.DeletionStatus">
@@ -361,26 +406,6 @@
                 providing type safety and preventing the creation of arbitrary states.
             </summary>
         </member>
-        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Add">
-            <summary>
-                Represents an 'Add' event type, typically used for new record creation.
-            </summary>
-        </member>
-        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Update">
-            <summary>
-                Represents an 'Update' event type, typically used for modifying existing records.
-            </summary>
-        </member>
-        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.EventType.SoftDelete">
-            <summary>
-                Represents a 'SoftDelete' event type, typically used for 'soft' removing records.
-            </summary>
-        </member>
-        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.EventType.HardDelete">
-            <summary>
-                Represents a 'HardDelete' event type, typically used for permanently removing records.
-            </summary>
-        </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.EventType.#ctor(System.Int32,System.String)">
             <summary>
                 Private constructor to prevent external instantiation.
@@ -388,6 +413,26 @@
             </summary>
             <param name="value">The integer value representing the event type.</param>
             <param name="name">The string name of the event type.</param>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Add">
+            <summary>
+                Represents an 'Add' event type, typically used for new record creation.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Update">
+            <summary>
+                Represents an 'Update' event type, typically used for modifying existing records.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FilesDb.Models.EventType.SoftDelete">
+            <summary>
+                Represents a 'SoftDelete' event type, typically used for 'soft' removing records.
+            </summary>
+        </member>
+        <member name="P:AStar.Dev.Infrastructure.FilesDb.Models.EventType.HardDelete">
+            <summary>
+                Represents a 'HardDelete' event type, typically used for permanently removing records.
+            </summary>
         </member>
         <member name="P:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Value">
             <summary>
@@ -402,14 +447,14 @@
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Equals(AStar.Dev.Infrastructure.FilesDb.Models.EventType)">
             <inheritdoc/>
         </member>
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.EventType.ToString">
             <summary>
                 Returns the string name of the event type, useful for debugging and display.
             </summary>
             <returns>The name of the event type.</returns>
-        </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.EventType.Equals(System.Object)">
-            <inheritdoc/>
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.EventType.GetHashCode">
             <inheritdoc/>
@@ -664,7 +709,7 @@
                 Gets the file width property
             </summary>
         </member>
-        <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileSize.Create(System.Int64,System.Int64,System.Int64)">
+        <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.FileSize.Create(System.Int64,System.Int32,System.Int32)">
             <summary>
                 The Create method will return a populated instance of the
                 <see cref="T:AStar.Dev.Infrastructure.FilesDb.Models.FileSize"/>
@@ -736,6 +781,31 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Models.ImageDetail.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
+            </summary>
+        </member>
+        <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.SearchType">
+            <summary>
+                The <see href="SearchType"></see> enumeration defining the available search types
+            </summary>
+        </member>
+        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.SearchType.Images">
+            <summary>
+                Search for images only
+            </summary>
+        </member>
+        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.SearchType.All">
+            <summary>
+                Search for all file types
+            </summary>
+        </member>
+        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.SearchType.Duplicates">
+            <summary>
+                Search for duplicates - file type is ignored
+            </summary>
+        </member>
+        <member name="F:AStar.Dev.Infrastructure.FilesDb.Models.SearchType.DuplicateImages">
+            <summary>
+                Search for duplicate images
             </summary>
         </member>
         <member name="T:AStar.Dev.Infrastructure.FilesDb.Models.SortOrder">
