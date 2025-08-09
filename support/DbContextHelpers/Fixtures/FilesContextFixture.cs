@@ -34,15 +34,6 @@ public class FilesContextFixture : IDisposable
 
         if(disposing)
         {
-            try
-            {
-                Sut.Database.EnsureDeleted();
-            }
-            catch
-            {
-                // NAR
-            }
-
             Sut.Dispose();
         }
 

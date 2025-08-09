@@ -42,7 +42,7 @@ public class FileDetailSearchTypeExtensionsShould (FilesContextFixture filesCont
 
         result.Count.ShouldBe(1546);
         result[0].FileName.Value.ShouldBe(@"\some\file.bmp");
-        result[0].FileSize.ShouldBe(91451L);
+        result[0].FileSize.ShouldBe(20033L);
     }
 
     [Fact]
@@ -52,8 +52,8 @@ public class FileDetailSearchTypeExtensionsShould (FilesContextFixture filesCont
 
         var result = sut.FileDetails.OfSearchType(SearchType.Duplicates).ToList();
 
-        result.Count.ShouldBe(1234);
-        result[0].FileName.Value.ShouldBe(@"\some\file.bmp");
-        result[0].FileSize.ShouldBe(91451L);
+        result.Count.ShouldBe(2013);
+        result[0].FileName.Value.ShouldBe(@"\some\file.txt");
+        result[0].FileSize.ShouldBe(45197L);
     }
 }
