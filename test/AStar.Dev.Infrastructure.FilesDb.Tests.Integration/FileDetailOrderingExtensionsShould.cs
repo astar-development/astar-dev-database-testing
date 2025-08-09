@@ -7,20 +7,16 @@ namespace AStar.Dev.Infrastructure.FilesDb;
 
 /// <summary>
 /// </summary>
-public class FileDetailOrderingExtensionsShould : IClassFixture<FilesContextFixture>
+public class FileDetailOrderingExtensionsShould (FilesContextFixture filesContextFixture) : IClassFixture<FilesContextFixture>
 {
-    private readonly FilesContextFixture filesContextFixture;
-
-    public FileDetailOrderingExtensionsShould(FilesContextFixture filesContextFixture) => this.filesContextFixture = filesContextFixture;
-
     [Fact]
     public void ShouldReturnExpectedFileDetailsOrderedByNameAscending()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OrderResultsBy(SortOrder.NameAscending).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
         result[0].FileName.Value.ShouldBe(@"\some\file.bmp");
         result[0].FileSize.ShouldBe(91451L);
     }
@@ -28,11 +24,11 @@ public class FileDetailOrderingExtensionsShould : IClassFixture<FilesContextFixt
     [Fact]
     public void ShouldReturnExpectedFileDetailsOrderedByNameDescending()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OrderResultsBy(SortOrder.NameDescending).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
         result[0].FileName.Value.ShouldBe(@"file.txt");
         result[0].FileSize.ShouldBe(91801L);
     }
@@ -40,11 +36,11 @@ public class FileDetailOrderingExtensionsShould : IClassFixture<FilesContextFixt
     [Fact]
     public void ShouldReturnExpectedFileDetailsOrderedBySizeAscending()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OrderResultsBy(SortOrder.SizeAscending).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
         result[0].FileName.Value.ShouldBe(@"\some\file.png");
         result[0].FileSize.ShouldBe(20024L);
     }
@@ -52,11 +48,11 @@ public class FileDetailOrderingExtensionsShould : IClassFixture<FilesContextFixt
     [Fact]
     public void ShouldReturnExpectedFileDetailsOrderedBySizeDescending()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OrderResultsBy(SortOrder.SizeDescending).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
         result[0].FileName.Value.ShouldBe(@"\some\file.txt");
         result[0].FileSize.ShouldBe(99889L);
     }

@@ -46,7 +46,6 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailDeletionStatusExtensions.IncludeDeletedOrDeletePending(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.Boolean)">
             <summary>
-
             </summary>
             <param name="files"></param>
             <param name="includeDeleted"></param>
@@ -84,7 +83,6 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailOrderingExtensions.OrderResultsBy(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},AStar.Dev.Infrastructure.FilesDb.Models.SortOrder)">
             <summary>
-
             </summary>
             <param name="files"></param>
             <param name="sortOrder"></param>
@@ -96,7 +94,6 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailPagingExtensions.GetPage(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},System.Int32,System.Int32)">
             <summary>
-
             </summary>
             <param name="files"></param>
             <param name="pageNumber"></param>
@@ -109,7 +106,6 @@
         </member>
         <member name="M:AStar.Dev.Infrastructure.FilesDb.Data.FileDetailSearchTypeExtensions.OfSearchType(System.Linq.IQueryable{AStar.Dev.Infrastructure.FilesDb.Models.FileDetail},AStar.Dev.Infrastructure.FilesDb.Models.SearchType)">
             <summary>
-
             </summary>
             <param name="files"></param>
             <param name="searchType"></param>

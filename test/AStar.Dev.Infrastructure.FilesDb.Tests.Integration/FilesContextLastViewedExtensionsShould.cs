@@ -19,20 +19,20 @@ public class FilesContextLastViewedExtensionsShould : IClassFixture<FilesContext
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhereLastViewedIsSetTo7Days()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.WhereLastViewedIsOlderThan(7, mockTimeProvider).ToList();
 
-        result.Count.ShouldBe(1002);
+        result.Count.ShouldBe(1524);
     }
 
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhereLastViewedIsSetTo0Days()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.WhereLastViewedIsOlderThan(0, mockTimeProvider).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
     }
 }

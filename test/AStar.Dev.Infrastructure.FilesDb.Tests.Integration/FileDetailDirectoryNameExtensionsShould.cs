@@ -5,22 +5,18 @@ using Shouldly;
 
 namespace AStar.Dev.Infrastructure.FilesDb;
 
-public class FileDetailDirectoryNameExtensionsShould : IClassFixture<FilesContextFixture>
+public class FileDetailDirectoryNameExtensionsShould (FilesContextFixture filesContextFixture) : IClassFixture<FilesContextFixture>
 {
-    private readonly FilesContextFixture filesContextFixture;
-
-    public FileDetailDirectoryNameExtensionsShould(FilesContextFixture filesContextFixture) => this.filesContextFixture = filesContextFixture;
-
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenDirectoryNameSpecifiedAndRecursionIsFalse()
     {
         var searchDirectory = new DirectoryName(@"\one-level\");
 
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.WhereDirectoryNameMatches(searchDirectory.Value, false).ToList();
 
-        result.Count.ShouldBe(457);
+        result.Count.ShouldBe(693);
     }
 
     [Fact]
@@ -28,10 +24,10 @@ public class FileDetailDirectoryNameExtensionsShould : IClassFixture<FilesContex
     {
         var searchDirectory = new DirectoryName(@"\with");
 
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.WhereDirectoryNameMatches(searchDirectory.Value, true).ToList();
 
-        result.Count.ShouldBe(1084);
+        result.Count.ShouldBe(1621);
     }
 }

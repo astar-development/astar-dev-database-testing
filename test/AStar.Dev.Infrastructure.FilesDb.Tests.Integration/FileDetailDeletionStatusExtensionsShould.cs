@@ -6,29 +6,25 @@ namespace AStar.Dev.Infrastructure.FilesDb;
 
 /// <summary>
 /// </summary>
-public class FileDetailDeletionStatusExtensionsShould : IClassFixture<FilesContextFixture>
+public class FileDetailDeletionStatusExtensionsShould (FilesContextFixture filesContextFixture) : IClassFixture<FilesContextFixture>
 {
-    private readonly FilesContextFixture filesContextFixture;
-
-    public FileDetailDeletionStatusExtensionsShould(FilesContextFixture filesContextFixture) => this.filesContextFixture = filesContextFixture;
-
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenIncludeDeletedOrDeletePendingIsFalse()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.IncludeDeletedOrDeletePending(false).ToList();
 
-        result.Count.ShouldBe(1734);
+        result.Count.ShouldBe(2600);
     }
 
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenIncludeDeletedOrDeletePendingIsTrue()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.IncludeDeletedOrDeletePending(true).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
     }
 }

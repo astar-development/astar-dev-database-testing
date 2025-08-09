@@ -6,16 +6,12 @@ namespace AStar.Dev.Infrastructure.FilesDb;
 
 /// <summary>
 /// </summary>
-public class FileDetailPagingExtensionsShould : IClassFixture<FilesContextFixture>
+public class FileDetailPagingExtensionsShould (FilesContextFixture filesContextFixture) : IClassFixture<FilesContextFixture>
 {
-    private readonly FilesContextFixture filesContextFixture;
-
-    public FileDetailPagingExtensionsShould(FilesContextFixture filesContextFixture) => this.filesContextFixture = filesContextFixture;
-
     [Fact]
     public void ShouldReturnExpectedFirstPageOfTenResultsWithCorrectDetails()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.GetPage(1, 10).ToList();
 
@@ -27,7 +23,7 @@ public class FileDetailPagingExtensionsShould : IClassFixture<FilesContextFixtur
     [Fact]
     public void ShouldReturnExpectedThirdPageOfTwentyResultsWithCorrectDetails()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.GetPage(28, 20).ToList();
 
@@ -39,7 +35,7 @@ public class FileDetailPagingExtensionsShould : IClassFixture<FilesContextFixtur
     [Fact]
     public void ShouldReturnFirstPageOfResultsWhenPageRequestedIsZero()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.GetPage(0, 20).ToList();
 
@@ -51,7 +47,7 @@ public class FileDetailPagingExtensionsShould : IClassFixture<FilesContextFixtur
     [Fact]
     public void ShouldReturnExpectedFiftyResultsWhenMaxItemsIsExceeded()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.GetPage(1, 51).ToList();
 

@@ -7,20 +7,16 @@ namespace AStar.Dev.Infrastructure.FilesDb;
 
 /// <summary>
 /// </summary>
-public class FileDetailSearchTypeExtensionsShould : IClassFixture<FilesContextFixture>
+public class FileDetailSearchTypeExtensionsShould (FilesContextFixture filesContextFixture) : IClassFixture<FilesContextFixture>
 {
-    private readonly FilesContextFixture filesContextFixture;
-
-    public FileDetailSearchTypeExtensionsShould(FilesContextFixture filesContextFixture) => this.filesContextFixture = filesContextFixture;
-
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenSearchTypeIsSetToAll()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OfSearchType(SearchType.All).ToList();
 
-        result.Count.ShouldBe(2000);
+        result.Count.ShouldBe(3000);
         result[0].FileName.Value.ShouldBe("file.txt");
         result[0].FileSize.ShouldBe(91801L);
     }
@@ -28,11 +24,11 @@ public class FileDetailSearchTypeExtensionsShould : IClassFixture<FilesContextFi
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenSearchTypeIsSetToImages()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OfSearchType(SearchType.Images).ToList();
 
-        result.Count.ShouldBe(1541);
+        result.Count.ShouldBe(2314);
         result[0].FileName.Value.ShouldBe(@"\some\file.gif");
         result[0].FileSize.ShouldBe(22081L);
     }
@@ -40,11 +36,11 @@ public class FileDetailSearchTypeExtensionsShould : IClassFixture<FilesContextFi
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenSearchTypeIsSetToDuplicateImages()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OfSearchType(SearchType.DuplicateImages).ToList();
 
-        result.Count.ShouldBe(5678);
+        result.Count.ShouldBe(1546);
         result[0].FileName.Value.ShouldBe(@"\some\file.bmp");
         result[0].FileSize.ShouldBe(91451L);
     }
@@ -52,7 +48,7 @@ public class FileDetailSearchTypeExtensionsShould : IClassFixture<FilesContextFi
     [Fact]
     public void ShouldReturnExpectedFileDetailsWhenSearchTypeIsSetToDuplicates()
     {
-        var sut = filesContextFixture.SutWithFileDetails;
+        var sut = filesContextFixture.Sut;
 
         var result = sut.FileDetails.OfSearchType(SearchType.Duplicates).ToList();
 
