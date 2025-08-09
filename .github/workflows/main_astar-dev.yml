@@ -50,23 +50,14 @@ jobs:
           New-Item -Path .\.sonar\scanner -ItemType Directory 
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
 
-      - name: 🔍 Restore,
-        shell: powershell
-        run: |
-          dotnet restore
-
-      - name: 🛠 Build
-        shell: powershell
-        run: |
-          dotnet build --no-restore
-
-      - name: 🧪 Test and analyse with ☁️ SonarCloud / Qube
+      - name: 🔍 Restore, 🛠 Build and 🧪 Test with ☁️ SonarCloud / Qube
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
           dotnet tool install --global dotnet-coverage
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"astar-development_astar-dev-database-testing" /o:"astar-development" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.scanner.scanAll=false /d:sonar.scanner.skipJreProvisioning=true
+          dotnet build
           dotnet-coverage collect 'dotnet test --filter "FullyQualifiedName!~Tests.EndToEnd"' -f xml -o 'coverage.xml'
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 #
