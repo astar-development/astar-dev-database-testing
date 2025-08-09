@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
-        <RootNamespace>AStar.Dev.Infrastructure.FilesDb</RootNamespace>
+        <RootNamespace>AStar.Dev.Infrastructure.FilesDb.Tests.Integration</RootNamespace>
         <UserSecretsId>8f6cdef5-4769-401b-a5d6-bf409c7b76d6</UserSecretsId>
     </PropertyGroup>
 
