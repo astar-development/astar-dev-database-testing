@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace AStar.Dev.Technical.Debt.Reporting;
+namespace AStar.Dev.Technical.Debt.Reporting.Tests.Unit;
 
 public class RefactorAttributeShould
 {

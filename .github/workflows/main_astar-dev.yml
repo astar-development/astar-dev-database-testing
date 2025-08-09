@@ -6,7 +6,7 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [ opened, synchronize, reopened ]
 jobs:
   build:
     name: Build and analyze
@@ -47,5 +47,5 @@ jobs:
           dotnet tool install --global dotnet-coverage
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"astar-development_astar-dev-database-testing" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
           dotnet build --no-incremental
-          dotnet-coverage collect 'dotnet test --filter "FullyQualifiedName\!~AStar.Dev.Infrastructure.FilesDb.Tests.EndToEnd & FullyQualifiedName\!~AStar.Dev.Infrastructure.FilesDb.Tests.Integration"' -f xml -o 'coverage.xml'
+          dotnet-coverage collect 'dotnet test --filter "FullyQualifiedName~Tests.Unit"' -f xml -o 'coverage.xml'
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"

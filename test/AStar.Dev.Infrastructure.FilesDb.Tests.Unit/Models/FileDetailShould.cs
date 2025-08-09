@@ -1,9 +1,10 @@
 using System.IO.Abstractions;
+using AStar.Dev.Infrastructure.FilesDb.Models;
 using JetBrains.Annotations;
 using NSubstitute;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Models;
+namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
 
 [TestSubject(typeof(FileDetail))]
 public sealed class FileDetailShould
