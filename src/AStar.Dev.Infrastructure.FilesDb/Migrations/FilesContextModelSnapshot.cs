@@ -184,10 +184,6 @@ namespace AStar.Dev.Infrastructure.FilesDb.Migrations
                     b.Property<DateTimeOffset?>("FileLastViewed")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<string>("FileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(256)");
-
                     b.Property<long>("FileSize")
                         .HasColumnType("bigint");
 
@@ -229,6 +225,16 @@ namespace AStar.Dev.Infrastructure.FilesDb.Migrations
                                 .HasColumnName("DirectoryName");
                         });
 
+                    b.ComplexProperty<Dictionary<string, object>>("FileName", "AStar.Dev.Infrastructure.FilesDb.Models.FileDetail.FileName#FileName", b1 =>
+                        {
+                            b1.IsRequired();
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(256)")
+                                .HasColumnName("FileName");
+                        });
+
                     b.ComplexProperty<Dictionary<string, object>>("ImageDetail", "AStar.Dev.Infrastructure.FilesDb.Models.FileDetail.ImageDetail#ImageDetail", b1 =>
                         {
                             b1.IsRequired();
@@ -244,11 +250,13 @@ namespace AStar.Dev.Infrastructure.FilesDb.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FileHandle");
-
-                    b.HasIndex("FileName");
+                    b.HasIndex("FileHandle")
+                        .IsUnique();
 
                     b.HasIndex("FileSize");
+
+                    b.HasIndex("IsImage", "FileSize")
+                        .HasDatabaseName("IX_FileDetail_DuplicateImages");
 
                     b.ToTable("FileDetail", "files");
                 });

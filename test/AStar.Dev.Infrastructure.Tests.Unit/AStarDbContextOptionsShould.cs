@@ -1,6 +1,5 @@
 ﻿using AStar.Dev.Infrastructure.Data;
 using AStar.Dev.Utilities;
-using Shouldly;
 
 namespace AStar.Dev.Infrastructure.Tests.Unit;
 

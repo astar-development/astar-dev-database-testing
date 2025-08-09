@@ -1,0 +1,4 @@
+﻿{
+  "enableLogging": true,
+  "includeSensitiveData": true
+}

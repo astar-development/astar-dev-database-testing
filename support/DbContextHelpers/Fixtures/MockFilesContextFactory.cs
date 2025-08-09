@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DbContextHelpers;
+namespace DbContextHelpers.Fixtures;
 
 public static class MockFilesContextFactory
 {
@@ -14,7 +14,7 @@ public static class MockFilesContextFactory
         var optionsBuilder   = new DbContextOptionsBuilder<FilesContext>();
         var config           = TestSetup.ServiceProvider.GetRequiredService<IConfiguration>();
         var connectionString = config.GetConnectionString("SqlServer");
-        optionsBuilder.UseSqlServer(connectionString);
+        optionsBuilder.UseSqlServer(connectionString, contextOptionsBuilder => contextOptionsBuilder.EnableRetryOnFailure(3, TimeSpan.FromSeconds(10), null));
         var testFilesContext = new FilesContext(optionsBuilder.Options);
 
         try

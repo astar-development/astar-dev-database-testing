@@ -8,20 +8,16 @@ public class FilesContextFixture : IDisposable
 {
     private bool disposedValue;
 
-    public FilesContext Sut { get; } = MockFilesContextFactory.CreateMockFilesContextAsync().Result;
-
-    public FilesContext SutWithFileDetails
+    public FilesContextFixture()
     {
-        get
-        {
-            TestContext = MockFilesContextFactory.CreateMockFilesContextAsync().Result;
-            TestContext.AddMockFiles();
-
-            return TestContext;
-        }
+        Sut = MockFilesContextFactory.CreateMockFilesContextAsync().Result;
+        Sut.AddMockFiles();
     }
 
-    public required FilesContext TestContext { get; set; }
+    public FilesContext Sut
+    {
+        get;
+    }
 
     public void Dispose()
     {
@@ -38,15 +34,6 @@ public class FilesContextFixture : IDisposable
 
         if(disposing)
         {
-            try
-            {
-                TestContext.Database.EnsureDeleted();
-            }
-            catch
-            {
-                // NAR
-            }
-
             Sut.Dispose();
         }
 

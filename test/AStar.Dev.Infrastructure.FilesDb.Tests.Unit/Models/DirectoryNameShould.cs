@@ -1,14 +1,13 @@
-using AStar.Dev.Infrastructure.FilesDb.Models;
 using AStar.Dev.Utilities;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
+namespace AStar.Dev.Infrastructure.FilesDb.Models;
 
 public class DirectoryNameShould
 {
     [Fact]
     public void ContainTheExpectedProperties()
-        => new DirectoryName { Value = "test" }
+        => new DirectoryName ( "test")
            .ToJson()
            .ShouldMatchApproved();
 }

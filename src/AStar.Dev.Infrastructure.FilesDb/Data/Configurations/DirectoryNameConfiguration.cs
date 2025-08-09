@@ -7,10 +7,8 @@ namespace AStar.Dev.Infrastructure.FilesDb.Data.Configurations;
 
 internal sealed class DirectoryNameConfiguration : IComplexPropertyConfiguration<DirectoryName>
 {
-    public void Configure(ComplexPropertyBuilder<DirectoryName> builder)
-    {
+    public void Configure(ComplexPropertyBuilder<DirectoryName> builder) =>
         builder.Property(directoryName => directoryName.Value)
-            .HasColumnName("DirectoryName")
-            .HasColumnType("nvarchar(256)");
-    }
+               .HasColumnName("DirectoryName")
+               .HasColumnType("nvarchar(256)");
 }

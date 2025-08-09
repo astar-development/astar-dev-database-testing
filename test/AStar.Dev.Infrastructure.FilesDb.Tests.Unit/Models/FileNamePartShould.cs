@@ -1,14 +1,14 @@
-using AStar.Dev.Infrastructure.FilesDb.Models;
 using AStar.Dev.Utilities;
+using JetBrains.Annotations;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
+namespace AStar.Dev.Infrastructure.FilesDb.Models;
 
+[TestSubject(typeof(FileNamePart))]
 public class FileNamePartShould
 {
     [Fact]
     public void ContainTheExpectedProperties()
-        => new FileNamePart { FileClassifications = new List<FileClassification> { new()  { Id = 1 } } }
-           .ToJson()
-           .ShouldMatchApproved();
+        => new FileNamePart { Id = 1, Text = "Mock Text", FileClassifications = new List<FileClassification> { new () { Id = 1, Celebrity = true, Name = "Mock Classification" } } }.ToJson()
+                                                                                                                                                                                    .ShouldMatchApproved();
 }
