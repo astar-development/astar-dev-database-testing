@@ -1,7 +1,8 @@
+using AStar.Dev.Infrastructure.FilesDb.Models;
 using AStar.Dev.Utilities;
 using Shouldly;
 
-namespace AStar.Dev.Infrastructure.FilesDb.Models;
+namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
 
 public class FileNameShould
 {
