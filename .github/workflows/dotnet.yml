@@ -11,6 +11,8 @@ jobs:
   build:
     name: Build and analyze
     runs-on: windows-latest
+    permissions:
+      contents: read
     env:
       SONAR_PROJECT: 'astar-dev-utilities'
       ProjectName: 'AStar.Dev.Utilities'
