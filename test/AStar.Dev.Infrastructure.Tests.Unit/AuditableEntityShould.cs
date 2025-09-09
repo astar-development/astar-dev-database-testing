@@ -7,7 +7,7 @@ public class AuditableEntityShould
 {
     [Fact]
     public void ContainTheExpectedProperties()
-        => new MockAuditableEntity { UpdatedBy = "Test User", UpdatedOn = new (2000, 1, 1, 0, 0, 0, TimeSpan.Zero) }
+        => new MockAuditableEntity { UpdatedBy = "Test User", UpdatedOn = new(2000, 1, 1, 0, 0, 0, TimeSpan.Zero) }
            .ToJson()
            .ShouldMatchApproved();
 
