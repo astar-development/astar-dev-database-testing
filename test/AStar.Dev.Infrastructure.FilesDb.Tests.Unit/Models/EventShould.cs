@@ -1,6 +1,5 @@
 using AStar.Dev.Infrastructure.FilesDb.Models;
 using AStar.Dev.Utilities;
-using Shouldly;
 
 namespace AStar.Dev.Infrastructure.FilesDb.Tests.Unit.Models;
 
@@ -13,13 +12,13 @@ public class EventShould
                FileName         = "FileName",
                DirectoryName    = "DirectoryName",
                FileSize         = 124,
-               FileCreated      = new (2025, 07, 28, 11, 22, 33, TimeSpan.Zero) ,
-               FileLastModified = new (2025, 07, 28, 1,  2,  3,  TimeSpan.Zero),
+               FileCreated      = new(2025, 07, 28, 11, 22, 33, TimeSpan.Zero),
+               FileLastModified = new(2025, 07, 28, 1, 2, 3, TimeSpan.Zero),
                Height           = 456,
                Id               = 1324,
                UpdatedBy        = "TestUser",
                Width            = 987,
-               EventOccurredAt  = new (2025, 07, 28, 1, 24, 34, TimeSpan.Zero),
+               EventOccurredAt  = new(2025, 07, 28, 1, 24, 34, TimeSpan.Zero),
                Handle           = "mock-handle",
                Type             = EventType.Add
            }

@@ -43,7 +43,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="AStar.png">
+        <None Update="astar.png">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>

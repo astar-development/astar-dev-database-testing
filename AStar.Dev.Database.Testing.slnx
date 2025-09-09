@@ -1,0 +1,27 @@
+<Solution>
+    <Folder Name="/Solution Items/">
+        <File Path=".editorconfig"/>
+    </Folder>
+    <Folder Name="/Solution Items/.github/">
+        <File Path=".github/dependabot.yml"/>
+    </Folder>
+    <Folder Name="/Solution Items/.github/workflows/">
+        <File Path=".github/workflows/main_astar-dev.yml"/>
+    </Folder>
+    <Folder Name="/src/">
+        <Project Path="src/AStar.Dev.Infrastructure.FilesDb/AStar.Dev.Infrastructure.FilesDb.csproj"/>
+        <Project Path="src/AStar.Dev.Infrastructure/AStar.Dev.Infrastructure.csproj"/>
+    </Folder>
+    <Folder Name="/support/">
+        <Project Path="support/AStar.Dev.Technical.Debt.Reporting/AStar.Dev.Technical.Debt.Reporting.csproj"/>
+        <Project Path="support/AStar.Dev.Utilities/AStar.Dev.Utilities.csproj"/>
+        <Project Path="support/DbContextHelpers/DbContextHelpers.csproj"/>
+    </Folder>
+    <Folder Name="/test/">
+        <Project Path="test/AStar.Dev.Infrastructure.FilesDb.Tests.Integration/AStar.Dev.Infrastructure.FilesDb.Tests.Integration.csproj"/>
+        <Project Path="test/AStar.Dev.Infrastructure.FilesDb.Tests.Unit/AStar.Dev.Infrastructure.FilesDb.Tests.Unit.csproj"/>
+        <Project Path="test/AStar.Dev.Infrastructure.Tests.Unit/AStar.Dev.Infrastructure.Tests.Unit.csproj"/>
+        <Project Path="test/AStar.Dev.Technical.Debt.Reporting.Tests.Unit/AStar.Dev.Technical.Debt.Reporting.Tests.Unit.csproj"/>
+        <Project Path="test/AStar.Dev.Utilities.Tests.Unit/AStar.Dev.Utilities.Tests.Unit.csproj"/>
+    </Folder>
+</Solution>
